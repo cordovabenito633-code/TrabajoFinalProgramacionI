@@ -1,14 +1,16 @@
-package proyectoProgramacionI;
-public class Aplicacion {
+package proyectoProgramacion1;
+public class Aplicacion{
   public static void main(String[] args) {
+    Producto p1,p2;
+    Venta miVenta;
     // 1. Crear productos (Polimorfismo: referencia Producto, instancia Hija)
-    Producto p1 = new ProductoNacional(100.0, "Zapatillas", "Tigre", 10, true);
+    p1 = new ProductoNacional(100.0, "Zapatillas", "Tigre", 10, true);
       
     // Laptop cuesta 2000, pero tiene 10% de impuesto por ser importada
-    Producto p2 = new ProductoImportado(2000.0, "Laptop Gamer", "Asus", 5, true, 0.10); 
+    p2 = new ProductoImportado(2000.0, "Laptop Gamer", "Asus", 5, true, 0.10); 
 
     // 2. Crear Venta
-    Venta miVenta = new Venta(1, "18/01/2026");
+    miVenta = new Venta(1, "18/01/2026");
 
     // 3. Vender
     // Compramos 2 pares de zapatillas (100 * 2 = 200)

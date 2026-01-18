@@ -1,5 +1,5 @@
 
-package proyectoProgramacionI;
+package proyectoProgramacion1;
 import java.util.ArrayList;
 
 public class Venta {
@@ -27,8 +27,8 @@ public class Venta {
         System.out.println("Fecha: " + fecha);
         for (DetalleVenta dv : detalles) {
             System.out.println("- " + dv.getProducto().getNombre() + 
-                               " x" + dv.getCantidad() + 
-                               " | Subtotal: " + dv.calcularSubtotal());
+                            " x" + dv.getCantidad() + 
+                            " | Subtotal: " + dv.calcularSubtotal());
         }
         System.out.println("TOTAL A PAGAR: " + total);
     }

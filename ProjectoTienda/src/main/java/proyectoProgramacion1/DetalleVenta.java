@@ -1,4 +1,4 @@
-package proyectoProgramacionI;
+package proyectoProgramacion1;
 
 public class DetalleVenta {
     Producto producto;

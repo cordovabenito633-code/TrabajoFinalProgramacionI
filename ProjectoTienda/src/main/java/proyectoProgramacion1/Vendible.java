@@ -1,4 +1,4 @@
-package proyectoProgramacionI;
+package proyectoProgramacion1;
 
 public interface Vendible {
     double calcularPrecioVenta();

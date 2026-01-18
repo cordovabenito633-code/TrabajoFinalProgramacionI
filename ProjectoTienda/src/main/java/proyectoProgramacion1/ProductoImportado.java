@@ -1,4 +1,4 @@
-package proyectoProgramacionI;
+package proyectoProgramacion1;
 
 public class ProductoImportado extends Producto{
     private double impuesto;
