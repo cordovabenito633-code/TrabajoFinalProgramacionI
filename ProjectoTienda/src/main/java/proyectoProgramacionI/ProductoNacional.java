@@ -1,4 +1,4 @@
-package proyectoProgramacion1;
+package proyectoProgramacionI;
 
 public class ProductoNacional extends Producto{
     public ProductoNacional(double precio, String nombre, String marca, int stock, boolean estado) {

@@ -1,5 +1,5 @@
 
-package proyectoProgramacion1;
+package proyectoProgramacionI;
 import java.util.ArrayList;
 
 public class Venta {

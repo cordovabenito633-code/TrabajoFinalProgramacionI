@@ -1,5 +1,5 @@
 
-package proyectoProgramacion1;
+package proyectoProgramacionI;
 
 public abstract class Producto implements Vendible{
     protected double precio;
