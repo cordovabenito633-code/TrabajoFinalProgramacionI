@@ -31,7 +31,7 @@ public class DetalleVenta {
     //Metodos
     public double calcularSubtotal() {
         double subTotal;
-        subTotal = cantidad * producto.precio;
+        subTotal = cantidad * producto.calcularPrecioVenta();
         return subTotal;
     }
 }

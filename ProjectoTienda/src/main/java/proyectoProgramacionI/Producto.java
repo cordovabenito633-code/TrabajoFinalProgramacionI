@@ -1,11 +1,11 @@
 
 package proyectoProgramacionI;
 
-public class Producto {
-    double precio;
-    String nombre, marca;
-    int stock;
-    boolean estado;
+public abstract class Producto implements Vendible{
+    protected double precio;
+    protected String nombre, marca;
+    protected int stock;
+    protected boolean estado;
     
     //Constructor de la clase producto:
     public Producto (double precio, String nombre, String marca, int stock, boolean estado){
@@ -13,6 +13,7 @@ public class Producto {
         this.nombre = nombre;
         this.marca = marca;
         this.stock = stock;
+        this.estado = estado;
     }
     
     //Métodos getters:
@@ -48,7 +49,7 @@ public class Producto {
     //Metodos del Negocio:
     public void aumentarStock(int cantidad){
         if(cantidad>0){
-            stock = stock+cantidad;
+            stock = stock + cantidad;
         }
     }
     
@@ -68,16 +69,19 @@ public class Producto {
     }
     
     //Mostrar el producto y sus atributos:
-    public void mostrar(){
-        System.out.println("Nombre del producto: "+nombre);
-        System.out.println("Marca del producto: "+marca);
-        System.out.println("Precio del producto: "+precio+" soles.");
-        System.out.println("Stock del producto: "+stock+" unidades.");
-        if(estado==true){
-            System.out.println("El producto SI se vende actualmente.");
+    @Override
+    public void mostrarDetalles(){
+        System.out.println("--- Producto: " + nombre + " ---");
+        System.out.println("Marca: " + marca + ".");
+        System.out.println("Precio: " + precio + " soles.");
+        System.out.println("Stock: " + stock + " unidades.");
+        if(estado){
+            System.out.println("El producto SI esta disponible.");
         }
         else{
-            System.out.println("El producto NO se vende actualmente.");
+            System.out.println("El producto NO esta disponible.");
         }
     }
+
+    public abstract double calcularPrecioVenta();
 }

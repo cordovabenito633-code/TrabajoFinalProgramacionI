@@ -9,47 +9,27 @@ public class Venta {
     ArrayList <DetalleVenta> detalles;
 
     //Constructor de la clase venta:
-    public Venta(int idVenta, String fecha, double total, ArrayList <DetalleVenta> detalles) {
+    public Venta(int idVenta, String fecha) {
         this.idVenta = idVenta;
         this.fecha = fecha;
-        this.total = total;
-        this.detalles = detalles;
+        this.total = 0;
+        this.detalles = new ArrayList<>();
     }
 
-    //Setters
-    public void setIdVenta(int idVenta) {
-        this.idVenta = idVenta;
+    public void agregarDetalle(DetalleVenta detalle) {
+        this.detalles.add(detalle);
+        this.total = this.total + detalle.calcularSubtotal();
+        detalle.getProducto().reducirStock(detalle.getCantidad());
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void mostrarTicket() {
+        System.out.println("\n=== BOLETA DE VENTA #" + idVenta + " ===");
+        System.out.println("Fecha: " + fecha);
+        for (DetalleVenta dv : detalles) {
+            System.out.println("- " + dv.getProducto().getNombre() + 
+                               " x" + dv.getCantidad() + 
+                               " | Subtotal: " + dv.calcularSubtotal());
+        }
+        System.out.println("TOTAL A PAGAR: " + total);
     }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public void setDetalles(ArrayList <DetalleVenta> detalles) {
-        this.detalles = detalles;
-    }
-
-    //Getters
-    public int getIdVenta() {
-        return idVenta;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public ArrayList <DetalleVenta> getDetalles() {
-        return detalles;
-    }
-
-    //Metodos
-    
 }
