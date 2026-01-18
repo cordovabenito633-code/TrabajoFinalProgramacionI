@@ -3,13 +3,11 @@ package proyectoProgramacionI;
 public class DetalleVenta {
     Producto producto;
     int cantidad;
-    double subtotal;
 
     //Constructor de la clase DetalleVenta
-    public DetalleVenta(Producto producto, int cantidad, double subtotal) {
+    public DetalleVenta(Producto producto, int cantidad) {
         this.producto = producto;
         this.cantidad = cantidad;
-        this.subtotal = subtotal;
     }
 
     //Getters
@@ -21,10 +19,6 @@ public class DetalleVenta {
         return cantidad;
     }
 
-    public double getSubtotal() {
-        return subtotal;
-    }
-    
     //Setters
     public void setProducto(Producto producto) {
         this.producto = producto;
@@ -34,7 +28,10 @@ public class DetalleVenta {
         this.cantidad = cantidad;
     }
 
-    public void setTotal(double subtotal) {
-        this.subtotal = subtotal;
+    //Metodos
+    public double calcularSubtotal() {
+        double subTotal;
+        subTotal = cantidad * producto.precio;
+        return subTotal;
     }
 }
